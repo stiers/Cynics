@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>9ec5f3aa-d9fd-445f-ac1e-b51c6a3429b1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.5in</BottomMargin>
+  <RightMargin>0.5in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="ACCYEAR">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1900</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ACCYEAR</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ACCMONTH">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ACCMONTH</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TEMPLATE_CODE">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TEMPLATE_CODE</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TEMPLATE_NAME">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TEMPLATE_NAME</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ColumnSpacing>0.025in</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table2">
+        <DataSetName>CSAccReporting_ReportBLPL</DataSetName>
+        <Top>0.125in</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PRINTDESC.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="text1">
+                      <ZIndex>5</ZIndex>
+                      <Visibility>
+                        <Hidden>=Fields!RPTTYPE_CODE.Value="HEADING"</Hidden>
+                      </Visibility>
+                      <Style>
+                        <BorderStyle>
+                          <Top>=IIF((Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value = "TOTALR") AND (Parameters!TEMPLATE_CODE.Value="PLYEAR" OR Parameters!TEMPLATE_CODE.Value="PLBUDGET" OR Parameters!TEMPLATE_CODE.Value="PLMONTH" OR Parameters!TEMPLATE_CODE.Value="BLBUDGET" OR Parameters!TEMPLATE_CODE.Value="BLYEAR" OR Parameters!TEMPLATE_CODE.Value="PLSIMPLE" OR Parameters!TEMPLATE_CODE.Value="BLSIMPLE"), "Solid", "None")</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>=IIF(Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value="TOTALR", "Bold", "Normal")</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Format>N</Format>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="BLSIMPLE") OR (Parameters!TEMPLATE_CODE.Value="BLBUDGET") OR (Parameters!TEMPLATE_CODE.Value="BLYEAR"), Fields!TOTALAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET") OR (Parameters!TEMPLATE_CODE.Value="PLSIMPLE") OR(Parameters!TEMPLATE_CODE.Value="PLYEAR") OR (Parameters!TEMPLATE_CODE.Value="PLMONTH"),Fields!MTH_TOTALAMT.Value,""))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="text2">
+                      <ZIndex>4</ZIndex>
+                      <Visibility>
+                        <Hidden>=Fields!RPTTYPE_CODE.Value="HEADING"</Hidden>
+                      </Visibility>
+                      <Style>
+                        <BorderStyle>
+                          <Top>=IIF((Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value = "TOTALR") AND (Parameters!TEMPLATE_CODE.Value="PLYEAR" OR Parameters!TEMPLATE_CODE.Value="PLBUDGET" OR Parameters!TEMPLATE_CODE.Value="PLMONTH" OR Parameters!TEMPLATE_CODE.Value="BLBUDGET" OR Parameters!TEMPLATE_CODE.Value="BLYEAR" OR Parameters!TEMPLATE_CODE.Value="PLSIMPLE"), "Solid", "None")</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>=IIF(Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value="TOTALR", "Bold", "Normal")</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Format>N</Format>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="BLBUDGET"), Fields!BUDGETAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="BLYEAR"),Fields!LTOTALAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLSIMPLE"),Fields!TOTALAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLMONTH"),Fields!LMTH_TOTALAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLYEAR"),Fields!LMTH_TOTALAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET"),Fields!MTH_BUDGETAMT.Value,""))))))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="text3">
+                      <ZIndex>3</ZIndex>
+                      <Visibility>
+                        <Hidden>=Fields!RPTTYPE_CODE.Value="HEADING"</Hidden>
+                      </Visibility>
+                      <Style>
+                        <BorderStyle>
+                          <Top>=IIF((Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value = "TOTALR") AND (Parameters!TEMPLATE_CODE.Value="PLYEAR" OR Parameters!TEMPLATE_CODE.Value="PLBUDGET" OR Parameters!TEMPLATE_CODE.Value="PLMONTH" OR Parameters!TEMPLATE_CODE.Value="BLBUDGET" OR Parameters!TEMPLATE_CODE.Value="BLYEAR"), "Solid", "None")</Top>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>=IIF(Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value="TOTALR", "Bold", "Normal")</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Format>N</Format>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="BLBUDGET"),Fields!VARAMT.Value, IIF((Parameters!TEMPLATE_CODE.Value="BLYEAR"),Fields!CMPYTOTAL.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET"),Fields!MTH_VARAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLMONTH"),Fields!CMPMTOTAL.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLYEAR"),Fields!CMPMTOTAL.Value,"")))))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="text4">
+                      <ZIndex>2</ZIndex>
+                      <Visibility>
+                        <Hidden>=Fields!RPTTYPE_CODE.Value="HEADING"</Hidden>
+                      </Visibility>
+                      <Style>
+                        <BorderStyle>
+                          <Top>=IIF((Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value = "TOTALR") AND (Parameters!TEMPLATE_CODE.Value="PLYEAR" OR Parameters!TEMPLATE_CODE.Value="PLBUDGET" OR Parameters!TEMPLATE_CODE.Value="PLMONTH"), "Solid", "None")</Top>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <FontWeight>=IIF(Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value="TOTALR", "Bold", "Normal")</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Format>N</Format>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET") OR (Parameters!TEMPLATE_CODE.Value="PLMONTH") OR (Parameters!TEMPLATE_CODE.Value="PLYEAR"),Fields!TOTALAMT.Value,"")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="text5">
+                      <ZIndex>1</ZIndex>
+                      <Visibility>
+                        <Hidden>=Fields!RPTTYPE_CODE.Value="HEADING"</Hidden>
+                      </Visibility>
+                      <Style>
+                        <BorderStyle>
+                          <Top>=IIF((Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value = "TOTALR") AND (Parameters!TEMPLATE_CODE.Value="PLYEAR" OR Parameters!TEMPLATE_CODE.Value="PLBUDGET"), "Solid", "None")</Top>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <FontWeight>=IIF(Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value="TOTALR", "Bold", "Normal")</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Format>N</Format>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET"),Fields!BUDGETAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLYEAR"),Fields!LTOTALAMT.Value,""))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="text6">
+                      <Visibility>
+                        <Hidden>=Fields!RPTTYPE_CODE.Value="HEADING"</Hidden>
+                      </Visibility>
+                      <Style>
+                        <BorderStyle>
+                          <Top>=IIF((Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value = "TOTALR") AND (Parameters!TEMPLATE_CODE.Value = "PLYEAR" OR Parameters!TEMPLATE_CODE.Value = "PLBUDGET"), "Solid", "None")</Top>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <FontWeight>=IIF(Fields!RPTTYPE_CODE.Value="TOTAL" OR Fields!RPTTYPE_CODE.Value="TOTALR", "Bold", "Normal")</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <Format>N</Format>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET"),Fields!VARAMT.Value,IIF((Parameters!TEMPLATE_CODE.Value="PLYEAR"),Fields!CMPYTOTAL.Value,""))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.16in</Height>
+            </TableRow>
+          </TableRows>
+          <Sorting>
+            <SortBy>
+              <SortExpression>=Fields!SORTORDER.Value</SortExpression>
+              <Direction>Ascending</Direction>
+            </SortBy>
+          </Sorting>
+        </Details>
+        <Style>
+          <FontSize>8pt</FontSize>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Label1">
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="BLSIMPLE"),"Balance",IIF((Parameters!TEMPLATE_CODE.Value="PLSIMPLE")OR (Parameters!TEMPLATE_CODE.Value="PLMONTH"),"This Period",IIF((Parameters!TEMPLATE_CODE.Value="BLYEAR") OR (Parameters!TEMPLATE_CODE.Value="PLYEAR"),"This Year",IIF((Parameters!TEMPLATE_CODE.Value="BLBUDGET")OR (Parameters!TEMPLATE_CODE.Value="PLBUDGET"),"Actual",""))))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Label2">
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="PLSIMPLE"),"Year to Date",IIF((Parameters!TEMPLATE_CODE.Value="BLYEAR") OR (Parameters!TEMPLATE_CODE.Value="PLYEAR"),"Last Year",IIF((Parameters!TEMPLATE_CODE.Value="BLBUDGET") OR (Parameters!TEMPLATE_CODE.Value="PLBUDGET"),"Budget",IIF((Parameters!TEMPLATE_CODE.Value="PLMONTH"),"Last Period",""))))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Label3">
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="BLYEAR") OR (Parameters!TEMPLATE_CODE.Value="BLBUDGET") OR (Parameters!TEMPLATE_CODE.Value="PLMONTH") OR (Parameters!TEMPLATE_CODE.Value="PLBUDGET")OR(Parameters!TEMPLATE_CODE.Value="PLYEAR"),"Variance","")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Label4">
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="PLMONTH"),"Year to Date",IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET"),"Actual YTD",IIF((Parameters!TEMPLATE_CODE.Value="PLYEAR"),"This YTD","")))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Label5">
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET"),"Budget YTD",IIF((Parameters!TEMPLATE_CODE.Value="PLYEAR"),"Last YTD",""))</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Label6">
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                        </BorderStyle>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF((Parameters!TEMPLATE_CODE.Value="PLBUDGET")OR (Parameters!TEMPLATE_CODE.Value="PLYEAR"),"Variance","")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.16in</Height>
+            </TableRow>
+          </TableRows>
+          <FixedHeader>true</FixedHeader>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.63043in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.97826in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.97826in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.97826in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.97826in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.97826in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.97827in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.32in</Height>
+      </Table>
+    </ReportItems>
+    <Height>0.55in</Height>
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox2">
+        <Top>0.25in</Top>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <ZIndex>2</ZIndex>
+        <Width>3.75in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>="Financial Period : "+CStr(Parameters!ACCMONTH.Value)+"/"+CStr(Parameters!ACCYEAR.Value)</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>3.75in</Width>
+        <Style>
+          <BorderStyle>
+            <Bottom>None</Bottom>
+          </BorderStyle>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>12pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Parameters!TEMPLATE_NAME.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox14">
+        <Left>5.9in</Left>
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>=Globals!ExecutionTime</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.5in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+  </PageHeader>
+  <rd:ReportID>6eec511f-0cda-4e96-8834-f066035e9f2c</rd:ReportID>
+  <LeftMargin>0.5in</LeftMargin>
+  <DataSets>
+    <DataSet Name="CSAccReporting_ReportBLPL">
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceSelectMethod>ReportBLPL</rd:ObjectDataSourceSelectMethod>
+        <rd:DataSetName>CSAccReporting</rd:DataSetName>
+        <rd:ObjectDataSourceType>CSAccountDatabaseIntf.CSAccReporting, CSAccountDatabaseIntf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ReportBLPL</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="RPTTYPE_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>RPTTYPE_CODE</DataField>
+        </Field>
+        <Field Name="PRINTDESC">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PRINTDESC</DataField>
+        </Field>
+        <Field Name="MTH_TOTALAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>MTH_TOTALAMT</DataField>
+        </Field>
+        <Field Name="MTH_BUDGETAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>MTH_BUDGETAMT</DataField>
+        </Field>
+        <Field Name="MTH_VARAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>MTH_VARAMT</DataField>
+        </Field>
+        <Field Name="TOTALAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TOTALAMT</DataField>
+        </Field>
+        <Field Name="BUDGETAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>BUDGETAMT</DataField>
+        </Field>
+        <Field Name="VARAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>VARAMT</DataField>
+        </Field>
+        <Field Name="LMTH_TOTALAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LMTH_TOTALAMT</DataField>
+        </Field>
+        <Field Name="LMTH_BUDGETAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LMTH_BUDGETAMT</DataField>
+        </Field>
+        <Field Name="LMTH_VARAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LMTH_VARAMT</DataField>
+        </Field>
+        <Field Name="LTOTALAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LTOTALAMT</DataField>
+        </Field>
+        <Field Name="LBUDGETAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LBUDGETAMT</DataField>
+        </Field>
+        <Field Name="LVARAMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>LVARAMT</DataField>
+        </Field>
+        <Field Name="CMPYTOTAL">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CMPYTOTAL</DataField>
+        </Field>
+        <Field Name="CMPMTOTAL">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CMPMTOTAL</DataField>
+        </Field>
+        <Field Name="SORTORDER">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>SORTORDER</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="textbox15">
+        <Width>1.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>="Page "+Globals!PageNumber.ToString+" of "+Globals!TotalPages.ToString</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.2in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BorderStyle>
+        <Top>Solid</Top>
+      </BorderStyle>
+    </Style>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+</Report>

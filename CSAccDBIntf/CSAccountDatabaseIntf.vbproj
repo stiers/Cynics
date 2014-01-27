@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CDACB6F-637A-4614-A562-376DBA1F3A38}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CSAccountDatabaseIntf</RootNamespace>
+    <AssemblyName>CSAccountDatabaseIntf</AssemblyName>
+    <MyType>Windows</MyType>
+    <OptionStrict>On</OptionStrict>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>http://localhost/CSAccDBIntf/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\need-license-to-compile-the-changes\</OutputPath>
+    <DocumentationFile>CSAccountDatabaseIntf.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CSAccountDatabaseIntf.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'License|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\License\</OutputPath>
+    <DocumentationFile>CSAccountDatabaseIntf.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'No Expire|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\No Expire\</OutputPath>
+    <DocumentationFile>CSAccountDatabaseIntf.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CSCommon\bin\Debug\CSCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompsDBs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompsDBs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CompsDBs.vb">
+      <DependentUpon>CompsDBs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccBKBookDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSAccBKBookDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccBKBookDataset.vb">
+      <DependentUpon>CSAccBKBookDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccountDatabaseInf.vb" />
+    <Compile Include="CSAccountDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSAccountDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccReporting.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSAccReporting.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccReporting.vb">
+      <DependentUpon>CSAccReporting.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccRptDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSAccRptDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccSimpleFinanceRptDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSAccSimpleFinanceRptDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSAccSimpleFinanceRptDataset.vb">
+      <DependentUpon>CSAccSimpleFinanceRptDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSGLDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSGLDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSGLDataset.vb">
+      <DependentUpon>CSGLDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSMasterDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSMasterDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSMasterDataset.vb">
+      <DependentUpon>CSMasterDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSSystemDBDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSSystemDBDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSSystemDBDataset.vb">
+      <DependentUpon>CSSystemDBDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSStdDlg.Designer.vb">
+      <DependentUpon>CSStdDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CSStdDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsInfo.vb" />
+    <Compile Include="LicenseDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LicenseDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="StdDBForm.Designer.vb">
+      <DependentUpon>StdDBForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StdDBForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StdDBTabForm.Designer.vb">
+      <DependentUpon>StdDBTabForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StdDBTabForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StdDBTranForm.Designer.vb">
+      <DependentUpon>StdDBTranForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StdDBTranForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StdForm.Designer.vb">
+      <DependentUpon>StdForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StdForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSStdDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CSStdDlg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdDBForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StdDBForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdDBTabForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StdDBTabForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdDBTranForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StdDBTranForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StdForm.resx">
+      <DependentUpon>StdForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CSSystemDBDataset.xsc">
+      <DependentUpon>CSSystemDBDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSSystemDBDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSSystemDBDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CSSystemDBDataset.xss">
+      <DependentUpon>CSSystemDBDataset.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSAccReporting.xsc">
+      <DependentUpon>CSAccReporting.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccReporting.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSAccReporting.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CSAccReporting.xss">
+      <DependentUpon>CSAccReporting.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccRptDataset.xsc">
+      <DependentUpon>CSAccRptDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccRptDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSAccRptDataset.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CSAccRptDataset.xss">
+      <DependentUpon>CSAccRptDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSGLDataset.xsc">
+      <DependentUpon>CSGLDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSGLDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>CSGLDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CSGLDataset.xss">
+      <DependentUpon>CSGLDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSMasterDataset.xsc">
+      <DependentUpon>CSMasterDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSMasterDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSMasterDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CSMasterDataset.xss">
+      <DependentUpon>CSMasterDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\edit24.bmp" />
+    <None Include="Resources\minus24.bmp" />
+    <None Include="Resources\undo24.bmp" />
+    <None Include="Resources\save24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.1.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CompsDBs.xsc">
+      <DependentUpon>CompsDBs.xsd</DependentUpon>
+    </None>
+    <None Include="CompsDBs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CompsDBs.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CompsDBs.xss">
+      <DependentUpon>CompsDBs.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccBKBookDataset.xsc">
+      <DependentUpon>CSAccBKBookDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccBKBookDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSAccBKBookDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CSAccBKBookDataset.xss">
+      <DependentUpon>CSAccBKBookDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccountDataset.xsc">
+      <DependentUpon>CSAccountDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccountDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSAccountDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CSAccountDataset.xss">
+      <DependentUpon>CSAccountDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccSimpleFinanceRptDataset.xsc">
+      <DependentUpon>CSAccSimpleFinanceRptDataset.xsd</DependentUpon>
+    </None>
+    <None Include="CSAccSimpleFinanceRptDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSAccSimpleFinanceRptDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CSAccSimpleFinanceRptDataset.xss">
+      <DependentUpon>CSAccSimpleFinanceRptDataset.xsd</DependentUpon>
+    </None>
+    <None Include="LicenseDataset.xsc">
+      <DependentUpon>LicenseDataset.xsd</DependentUpon>
+    </None>
+    <None Include="LicenseDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LicenseDataset.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LicenseDataset.xss">
+      <DependentUpon>LicenseDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\HARDWA55.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>aedf362d-52b8-4c71-9d57-c483da8c08d6</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>1in</BottomMargin>
+  <RightMargin>1in</RightMargin>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>CSAccPayableDataset_MST_VENDOR</DataSetName>
+        <Top>0.125in</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VENDOR_CODE">
+                      <rd:DefaultName>VENDOR_CODE</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!VENDOR_CODE.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="VENDOR_NAME">
+                      <rd:DefaultName>VENDOR_NAME</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!VENDOR_NAME.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PHONE">
+                      <rd:DefaultName>PHONE</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PHONE.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="FAX">
+                      <rd:DefaultName>FAX</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!FAX.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="NOTES">
+                      <rd:DefaultName>NOTES</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!NOTES.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.2in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Vendor#</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Vendor Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Phone</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Fax</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FontWeight>700</FontWeight>
+                        <FontSize>8pt</FontSize>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Notes</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.2in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.625in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.625in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>0.4in</Height>
+      </Table>
+    </ReportItems>
+    <Height>0.625in</Height>
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox14">
+        <Left>4.875in</Left>
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>1.60001in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>=Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>1.75in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>14pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>Vendors' Listing</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.5in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+  </PageHeader>
+  <rd:ReportID>6bc95fbd-5c20-4fa3-8b2a-d854bbce1865</rd:ReportID>
+  <LeftMargin>1in</LeftMargin>
+  <DataSets>
+    <DataSet Name="CSAccPayableDataset_MST_VENDOR">
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceSelectMethod>MST_VENDOR</rd:ObjectDataSourceSelectMethod>
+        <rd:DataSetName>CSAccPayableDataset</rd:DataSetName>
+        <rd:ObjectDataSourceType>CSAccountDatabaseIntf.CSAccPayableDataset, CSAccountDatabaseIntf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>MST_VENDOR</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="VENDOR_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>VENDOR_CODE</DataField>
+        </Field>
+        <Field Name="VENDOR_NAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>VENDOR_NAME</DataField>
+        </Field>
+        <Field Name="REG_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>REG_CODE</DataField>
+        </Field>
+        <Field Name="ADDR1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR1</DataField>
+        </Field>
+        <Field Name="ADDR2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR2</DataField>
+        </Field>
+        <Field Name="ADDR3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR3</DataField>
+        </Field>
+        <Field Name="ADDR4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR4</DataField>
+        </Field>
+        <Field Name="PHONE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PHONE</DataField>
+        </Field>
+        <Field Name="FAX">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FAX</DataField>
+        </Field>
+        <Field Name="WEBPAGE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>WEBPAGE</DataField>
+        </Field>
+        <Field Name="EMAIL">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>EMAIL</DataField>
+        </Field>
+        <Field Name="CONTACT1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CONTACT1</DataField>
+        </Field>
+        <Field Name="C1PHONE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C1PHONE</DataField>
+        </Field>
+        <Field Name="C1FAX">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C1FAX</DataField>
+        </Field>
+        <Field Name="CONTACT2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CONTACT2</DataField>
+        </Field>
+        <Field Name="C2PHONE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C2PHONE</DataField>
+        </Field>
+        <Field Name="C2FAX">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C2FAX</DataField>
+        </Field>
+        <Field Name="TERMDAY">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>TERMDAY</DataField>
+        </Field>
+        <Field Name="DISCDAY">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DISCDAY</DataField>
+        </Field>
+        <Field Name="DISCPTG">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>DISCPTG</DataField>
+        </Field>
+        <Field Name="DUEDAY">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DUEDAY</DataField>
+        </Field>
+        <Field Name="CURR_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CURR_CODE</DataField>
+        </Field>
+        <Field Name="INV_DESC">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>INV_DESC</DataField>
+        </Field>
+        <Field Name="NOTES">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NOTES</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Width>6.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="textbox15">
+        <Width>1.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.2in</Height>
+        <Value>="Page "+Globals!PageNumber.ToString+" of "+Globals!TotalPages.ToString</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.325in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BorderStyle>
+        <Top>Solid</Top>
+      </BorderStyle>
+    </Style>
+  </PageFooter>
+  <TopMargin>1in</TopMargin>
+</Report>

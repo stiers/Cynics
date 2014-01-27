@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CompsDBs" targetNamespace="http://tempuri.org/CompsDBs.xsd" xmlns:mstns="http://tempuri.org/CompsDBs.xsd" xmlns="http://tempuri.org/CompsDBs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CompsDBs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CompsDBs" msprop:Generator_DataSetName="CompsDBs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CompDB" msprop:Generator_UserTableName="CompDB" msprop:Generator_RowDeletedName="CompDBRowDeleted" msprop:Generator_RowChangedName="CompDBRowChanged" msprop:Generator_RowClassName="CompDBRow" msprop:Generator_RowChangingName="CompDBRowChanging" msprop:Generator_RowEvArgName="CompDBRowChangeEvent" msprop:Generator_RowEvHandlerName="CompDBRowChangeEventHandler" msprop:Generator_TableClassName="CompDBDataTable" msprop:Generator_TableVarName="tableCompDB" msprop:Generator_RowDeletingName="CompDBRowDeleting" msprop:Generator_TablePropName="CompDB">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CompName" msprop:Generator_UserColumnName="CompName" msprop:Generator_ColumnVarNameInTable="columnCompName" msprop:Generator_ColumnPropNameInRow="CompName" msprop:Generator_ColumnPropNameInTable="CompNameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DBName" msprop:Generator_UserColumnName="DBName" msprop:Generator_ColumnVarNameInTable="columnDBName" msprop:Generator_ColumnPropNameInRow="DBName" msprop:Generator_ColumnPropNameInTable="DBNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AdminData" msprop:Generator_UserTableName="AdminData" msprop:Generator_RowDeletedName="AdminDataRowDeleted" msprop:Generator_RowChangedName="AdminDataRowChanged" msprop:Generator_RowClassName="AdminDataRow" msprop:Generator_RowChangingName="AdminDataRowChanging" msprop:Generator_RowEvArgName="AdminDataRowChangeEvent" msprop:Generator_RowEvHandlerName="AdminDataRowChangeEventHandler" msprop:Generator_TableClassName="AdminDataDataTable" msprop:Generator_TableVarName="tableAdminData" msprop:Generator_RowDeletingName="AdminDataRowDeleting" msprop:Generator_TablePropName="AdminData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AdminName" msprop:Generator_UserColumnName="AdminName" msprop:Generator_ColumnVarNameInTable="columnAdminName" msprop:Generator_ColumnPropNameInRow="AdminName" msprop:Generator_ColumnPropNameInTable="AdminNameColumn" type="xs:base64Binary" />
+              <xs:element name="AdminPass" msprop:Generator_UserColumnName="AdminPass" msprop:Generator_ColumnVarNameInTable="columnAdminPass" msprop:Generator_ColumnPropNameInRow="AdminPass" msprop:Generator_ColumnPropNameInTable="AdminPassColumn" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CompDB" />
+      <xs:field xpath="mstns:CompName" />
+    </xs:unique>
+    <xs:unique name="AdminData_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AdminData" />
+      <xs:field xpath="mstns:AdminName" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

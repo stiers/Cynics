@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBEC017E-F2E2-4E9C-A150-817686569102}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CSGLedger</RootNamespace>
+    <AssemblyName>CSGLedger</AssemblyName>
+    <MyType>Windows</MyType>
+    <OptionStrict>On</OptionStrict>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CSGLedger.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CSGLedger.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'License|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\License\</OutputPath>
+    <DocumentationFile>CSGLedger.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'No Expire|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\No Expire\</OutputPath>
+    <DocumentationFile>CSGLedger.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSAccountDatabaseIntf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CSAccDBIntf\bin\Debug\CSAccountDatabaseIntf.dll</HintPath>
+    </Reference>
+    <Reference Include="CSCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CSCommon\bin\Debug\CSCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FmAccount.Designer.vb">
+      <DependentUpon>FmAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmAccountDlg.Designer.vb">
+      <DependentUpon>FmAccountDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmAccountDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmBank.Designer.vb">
+      <DependentUpon>FmBank.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmBank.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmBkBook.Designer.vb">
+      <DependentUpon>FmBkBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmBkBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmCloseYearWaitDlg.Designer.vb">
+      <DependentUpon>FmCloseYearWaitDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmCloseYearWaitDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmCompany.Designer.vb">
+      <DependentUpon>FmCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmCompany.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmCurrency.Designer.vb">
+      <DependentUpon>FmCurrency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmCurrency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmFilterAccAccTypeYearDlg.Designer.vb">
+      <DependentUpon>FmFilterAccAccTypeYearDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmFilterAccAccTypeYearDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmFilterAccTypeYearDlg.Designer.vb">
+      <DependentUpon>FmFilterAccTypeYearDlg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmFilterAccTypeYearDlg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmGL.Designer.vb">
+      <DependentUpon>FmGL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FmGL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsInfo.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FmAccount.resx">
+      <DependentUpon>FmAccount.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmAccountDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FmAccountDlg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmBank.resx">
+      <DependentUpon>FmBank.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmBkBook.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FmBkBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmCloseYearWaitDlg.resx">
+      <DependentUpon>FmCloseYearWaitDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmCompany.resx">
+      <DependentUpon>FmCompany.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmCurrency.resx">
+      <DependentUpon>FmCurrency.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmFilterAccAccTypeYearDlg.resx">
+      <DependentUpon>FmFilterAccAccTypeYearDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmFilterAccTypeYearDlg.resx">
+      <DependentUpon>FmFilterAccTypeYearDlg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmGL.resx">
+      <DependentUpon>FmGL.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\currency setting1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finacail repot template1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account setting1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accout history1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accout period total1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank reconcition1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank setting1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campang setup1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\campany setup1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Genera Ledger1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\general ledger1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yearly budget1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bank Book1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

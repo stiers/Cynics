@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>51ac4838-8eff-4ed4-8a25-20261ee78a00</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.5in</BottomMargin>
+  <RightMargin>0.5in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="CBNO">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CBNO</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <Table Name="table2">
+        <Filters>
+          <Filter>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!CBNO.Value</FilterValue>
+            </FilterValues>
+            <FilterExpression>=Fields!CBNO.Value</FilterExpression>
+          </Filter>
+        </Filters>
+        <DataSetName>CSInvCashBillDataset_TRN_CASHBILL</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="subreport1">
+                      <Parameters>
+                        <Parameter Name="CBNO">
+                          <Value>=Fields!CBNO.Value</Value>
+                        </Parameter>
+                        <Parameter Name="INVOICETITLE">
+                          <Value>="Cash Bill"</Value>
+                        </Parameter>
+                        <Parameter Name="COMPANYNAME">
+                          <Value>=First(Fields!COMP_NAME.Value, "CSInvCashBillDataset_MST_COMPANY")</Value>
+                        </Parameter>
+                        <Parameter Name="COMPANYADDRESS">
+                          <Value>=First(Fields!ADDR1.Value, "CSInvCashBillDataset_MST_COMPANY")+First(Fields!ADDR2.Value, "CSInvCashBillDataset_MST_COMPANY")+First(Fields!ADDR3.Value, "CSInvCashBillDataset_MST_COMPANY")+First(Fields!ADDR4.Value, "CSInvCashBillDataset_MST_COMPANY")+IIF(First(Fields!PHONENO.Value, "CSInvCashBillDataset_MST_COMPANY")&lt;&gt; "","  Phone# : ","")+First(Fields!PHONENO.Value, "CSInvCashBillDataset_MST_COMPANY")+IIF(First(Fields!FAXNO.Value, "CSInvCashBillDataset_MST_COMPANY")&lt;&gt;"",", Fax# : ","")+First(Fields!FAXNO.Value, "CSInvCashBillDataset_MST_COMPANY")</Value>
+                        </Parameter>
+                        <Parameter Name="CUSTOMERNAME">
+                          <Value>=Fields!CUSTOMER_NAME.Value</Value>
+                        </Parameter>
+                        <Parameter Name="CUSTADDR1">
+                          <Value>=Fields!CUSTADDR1.Value</Value>
+                        </Parameter>
+                        <Parameter Name="CUSTADDR2">
+                          <Value>=Fields!CUSTADDR2.Value</Value>
+                        </Parameter>
+                        <Parameter Name="CUSTADDR3">
+                          <Value>=Fields!CUSTADDR3.Value</Value>
+                        </Parameter>
+                        <Parameter Name="CUSTADDR4">
+                          <Value>=Fields!CUSTADDR4.Value</Value>
+                        </Parameter>
+                        <Parameter Name="SHIPNAME">
+                          <Value>=Fields!CUSTSHIPNAME.Value</Value>
+                        </Parameter>
+                        <Parameter Name="SHIPADDR1">
+                          <Value>=Fields!CUSTSHIPADDR1.Value</Value>
+                        </Parameter>
+                        <Parameter Name="SHIPADDR2">
+                          <Value>=Fields!CUSTSHIPADDR2.Value</Value>
+                        </Parameter>
+                        <Parameter Name="SHIPADDR3">
+                          <Value>=Fields!CUSTSHIPADDR3.Value</Value>
+                        </Parameter>
+                        <Parameter Name="SHIPADDR4">
+                          <Value>=Fields!CUSTSHIPADDR4.Value</Value>
+                        </Parameter>
+                        <Parameter Name="DATE">
+                          <Value>=FormatDateTime(Fields!TRAN_DATE.value, DateFormat.ShortDate)</Value>
+                        </Parameter>
+                        <Parameter Name="MEMO">
+                          <Value>=Fields!MEMO.Value</Value>
+                        </Parameter>
+                        <Parameter Name="INVOICENO">
+                          <Value>=Fields!TRAN_CODE.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>CashBillDetails</ReportName>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>2.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.5in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>0.25in</Height>
+  </Body>
+  <rd:ReportID>0ccd6255-604f-4ba4-813a-e7018aee3e15</rd:ReportID>
+  <LeftMargin>0.5in</LeftMargin>
+  <DataSets>
+    <DataSet Name="CSInvCashBillDataset_MST_COMPANY">
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceSelectMethod>MST_COMPANY</rd:ObjectDataSourceSelectMethod>
+        <rd:DataSetName>CSInvCashBillDataset</rd:DataSetName>
+        <rd:ObjectDataSourceType>CSAccountDatabaseIntf.CSInvCashBillDataset, CSAccountDatabaseIntf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>MST_COMPANY</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="COMPNO">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>COMPNO</DataField>
+        </Field>
+        <Field Name="COMP_NAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>COMP_NAME</DataField>
+        </Field>
+        <Field Name="REG_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>REG_CODE</DataField>
+        </Field>
+        <Field Name="ACC_YEAR">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>ACC_YEAR</DataField>
+        </Field>
+        <Field Name="START_MONTH">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>START_MONTH</DataField>
+        </Field>
+        <Field Name="CURR_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CURR_CODE</DataField>
+        </Field>
+        <Field Name="ADDR1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR1</DataField>
+        </Field>
+        <Field Name="ADDR2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR2</DataField>
+        </Field>
+        <Field Name="ADDR3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR3</DataField>
+        </Field>
+        <Field Name="ADDR4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR4</DataField>
+        </Field>
+        <Field Name="PHONENO">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PHONENO</DataField>
+        </Field>
+        <Field Name="FAXNO">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FAXNO</DataField>
+        </Field>
+        <Field Name="ACC_AP">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ACC_AP</DataField>
+        </Field>
+        <Field Name="ACC_APDISC">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ACC_APDISC</DataField>
+        </Field>
+        <Field Name="ACC_AR">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ACC_AR</DataField>
+        </Field>
+        <Field Name="ACC_ARDISC">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ACC_ARDISC</DataField>
+        </Field>
+        <Field Name="ACC_SALES">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ACC_SALES</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CSInvCashBillDataset_TRN_CASHBILL">
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceSelectMethod>TRN_CASHBILL</rd:ObjectDataSourceSelectMethod>
+        <rd:DataSetName>CSInvCashBillDataset</rd:DataSetName>
+        <rd:ObjectDataSourceType>CSAccountDatabaseIntf.CSInvCashBillDataset, CSAccountDatabaseIntf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>TRN_CASHBILL</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="CBNO">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CBNO</DataField>
+        </Field>
+        <Field Name="TRAN_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TRAN_CODE</DataField>
+        </Field>
+        <Field Name="ACC_YEAR">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ACC_YEAR</DataField>
+        </Field>
+        <Field Name="ACC_MONTH">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ACC_MONTH</DataField>
+        </Field>
+        <Field Name="TRAN_DATE">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>TRAN_DATE</DataField>
+        </Field>
+        <Field Name="WHNO">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>WHNO</DataField>
+        </Field>
+        <Field Name="MEMO">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>MEMO</DataField>
+        </Field>
+        <Field Name="TOTAL_AMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TOTAL_AMT</DataField>
+        </Field>
+        <Field Name="CUSTOMER_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_CODE</DataField>
+        </Field>
+        <Field Name="TAX_CODE1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TAX_CODE1</DataField>
+        </Field>
+        <Field Name="TAX_CODE2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TAX_CODE2</DataField>
+        </Field>
+        <Field Name="TAX_AMT1">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TAX_AMT1</DataField>
+        </Field>
+        <Field Name="TAX_AMT2">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TAX_AMT2</DataField>
+        </Field>
+        <Field Name="BANKNO">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>BANKNO</DataField>
+        </Field>
+        <Field Name="CURR_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CURR_CODE</DataField>
+        </Field>
+        <Field Name="CURR_RATE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CURR_RATE</DataField>
+        </Field>
+        <Field Name="CALC_TOTAL_AMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALC_TOTAL_AMT</DataField>
+        </Field>
+        <Field Name="DOMESTIC_AMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>DOMESTIC_AMT</DataField>
+        </Field>
+        <Field Name="CALC_TAX_AMT1">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CALC_TAX_AMT1</DataField>
+        </Field>
+        <Field Name="CUSTOMER_NAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_NAME</DataField>
+        </Field>
+        <Field Name="CUSTADDR1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTADDR1</DataField>
+        </Field>
+        <Field Name="CUSTADDR2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTADDR2</DataField>
+        </Field>
+        <Field Name="CUSTADDR3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTADDR3</DataField>
+        </Field>
+        <Field Name="CUSTADDR4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTADDR4</DataField>
+        </Field>
+        <Field Name="CUSTSHIPNAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTSHIPNAME</DataField>
+        </Field>
+        <Field Name="CUSTSHIPADDR1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTSHIPADDR1</DataField>
+        </Field>
+        <Field Name="CUSTSHIPADDR2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTSHIPADDR2</DataField>
+        </Field>
+        <Field Name="CUSTSHIPADDR3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTSHIPADDR3</DataField>
+        </Field>
+        <Field Name="CUSTSHIPADDR4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTSHIPADDR4</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <PageFooter>
+    <ReportItems>
+      <Line Name="line3">
+        <Top>1.475in</Top>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="textbox15">
+        <Top>1.55in</Top>
+        <ZIndex>4</ZIndex>
+        <Width>1.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.2in</Height>
+        <Value>="Page "+Globals!PageNumber.ToString+" of "+Globals!TotalPages.ToString</Value>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <Left>0.025in</Left>
+        <Top>1.15in</Top>
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <ZIndex>3</ZIndex>
+        <Width>2.025in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Authorised Signature(s)</Value>
+      </Textbox>
+      <Line Name="line2">
+        <Left>2.42917in</Left>
+        <Top>1.05in</Top>
+        <ZIndex>2</ZIndex>
+        <Width>2.025in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Height>0in</Height>
+      </Line>
+      <Textbox Name="textbox4">
+        <Left>2.42917in</Left>
+        <Top>1.15in</Top>
+        <ZIndex>1</ZIndex>
+        <Width>2.025in</Width>
+        <Style>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.25in</Height>
+        <Value>Received By</Value>
+      </Textbox>
+      <Line Name="line1">
+        <Left>0.025in</Left>
+        <Top>1.05in</Top>
+        <Width>2.025in</Width>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Height>0in</Height>
+      </Line>
+    </ReportItems>
+    <Height>1.8in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BorderStyle>
+        <Top>None</Top>
+      </BorderStyle>
+    </Style>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+</Report>

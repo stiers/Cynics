@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>2b72e721-55b4-4e51-beb4-c8e3eb581037</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.5in</BottomMargin>
+  <RightMargin>0.5in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="ARCHEQUENO">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ARCHEQUENO</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Filters>
+          <Filter>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!ARCHEQUENO.Value</FilterValue>
+            </FilterValues>
+            <FilterExpression>=Fields!ARCHEQUENO.Value</FilterExpression>
+          </Filter>
+        </Filters>
+        <ReportItems>
+          <Rectangle Name="rectangle2">
+            <Left>5.6in</Left>
+            <ReportItems>
+              <Line Name="line2">
+                <Left>0.01458in</Left>
+                <Top>0.275in</Top>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <BorderStyle>
+                    <Default>Solid</Default>
+                  </BorderStyle>
+                </Style>
+                <Height>0in</Height>
+              </Line>
+              <Textbox Name="textbox6">
+                <Left>0.05in</Left>
+                <Top>0.075in</Top>
+                <ZIndex>6</ZIndex>
+                <Width>0.725in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontWeight>700</FontWeight>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>Receipt# :</Value>
+              </Textbox>
+              <Textbox Name="textbox4">
+                <Left>0.05in</Left>
+                <Top>0.325in</Top>
+                <ZIndex>5</ZIndex>
+                <Width>0.725in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontWeight>700</FontWeight>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>Pay Date :</Value>
+              </Textbox>
+              <Textbox Name="textbox5">
+                <Left>0.05in</Left>
+                <Top>0.6in</Top>
+                <ZIndex>4</ZIndex>
+                <Width>0.725in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontWeight>700</FontWeight>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>Paid Amt : </Value>
+              </Textbox>
+              <Textbox Name="CHEQUE_AMT">
+                <Left>0.825in</Left>
+                <Top>0.6in</Top>
+                <rd:DefaultName>CHEQUE_AMT</rd:DefaultName>
+                <ZIndex>3</ZIndex>
+                <Width>1in</Width>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <Format>N</Format>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!CHEQUE_AMT.Value</Value>
+              </Textbox>
+              <Textbox Name="CHEQUE_DATE">
+                <Left>0.825in</Left>
+                <Top>0.325in</Top>
+                <rd:DefaultName>CHEQUE_DATE</rd:DefaultName>
+                <ZIndex>2</ZIndex>
+                <Width>1in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <Format>d</Format>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!CHEQUE_DATE.Value</Value>
+              </Textbox>
+              <Textbox Name="ARCHEQUENO">
+                <Left>0.825in</Left>
+                <Top>0.075in</Top>
+                <rd:DefaultName>ARCHEQUENO</rd:DefaultName>
+                <ZIndex>1</ZIndex>
+                <Width>1in</Width>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!ARCHEQUENO.Value</Value>
+              </Textbox>
+              <Line Name="line3">
+                <Left>0.01042in</Left>
+                <Top>0.55in</Top>
+                <Style>
+                  <BorderStyle>
+                    <Default>Solid</Default>
+                  </BorderStyle>
+                </Style>
+                <Height>0in</Height>
+              </Line>
+            </ReportItems>
+            <Top>0.8in</Top>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0.825in</Height>
+          </Rectangle>
+          <Textbox Name="textbox2">
+            <Left>0.075in</Left>
+            <Top>0.5in</Top>
+            <rd:DefaultName>textbox2</rd:DefaultName>
+            <ZIndex>6</ZIndex>
+            <Width>0.725in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.16in</Height>
+            <Value>Cheque# : </Value>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <ZIndex>5</ZIndex>
+            <Width>2.05in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>14pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.27917in</Height>
+            <Value>Official Receipts</Value>
+          </Textbox>
+          <Textbox Name="ARCHEQUE_CODE">
+            <Left>0.825in</Left>
+            <Top>0.5in</Top>
+            <rd:DefaultName>ARCHEQUE_CODE</rd:DefaultName>
+            <ZIndex>4</ZIndex>
+            <Width>1in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontSize>8pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.16in</Height>
+            <Value>=Fields!ARCHEQUE_CODE.Value</Value>
+          </Textbox>
+          <Subreport Name="subreport1">
+            <Parameters>
+              <Parameter Name="ARCHEQUENO">
+                <Value>=Fields!ARCHEQUENO.Value</Value>
+              </Parameter>
+            </Parameters>
+            <Top>1.925in</Top>
+            <ZIndex>3</ZIndex>
+            <ReportName>CustomerReceiptDetails</ReportName>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+          </Subreport>
+          <Textbox Name="textbox14">
+            <Left>6in</Left>
+            <rd:DefaultName>textbox14</rd:DefaultName>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.25in</Height>
+            <Value>=Globals!ExecutionTime</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Left>0.175in</Left>
+            <Top>0.75in</Top>
+            <ZIndex>1</ZIndex>
+            <Width>0.6in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+              <BackgroundColor>White</BackgroundColor>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.16in</Height>
+            <Value>Paid By : </Value>
+          </Textbox>
+          <Rectangle Name="rectangle1">
+            <Left>0.05in</Left>
+            <ReportItems>
+              <Textbox Name="CUSTOMER_NAME">
+                <Left>0.05in</Left>
+                <Top>0.15in</Top>
+                <rd:DefaultName>CUSTOMER_NAME</rd:DefaultName>
+                <ZIndex>4</ZIndex>
+                <Width>2.925in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!CUSTOMER_NAME.Value</Value>
+              </Textbox>
+              <Textbox Name="CUSTOMER_ADDR1">
+                <Left>0.05in</Left>
+                <Top>0.3in</Top>
+                <rd:DefaultName>CUSTOMER_ADDR1</rd:DefaultName>
+                <ZIndex>3</ZIndex>
+                <Width>2.925in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!CUSTOMER_ADDR1.Value</Value>
+              </Textbox>
+              <Textbox Name="CUSTOMER_ADDR2">
+                <Left>0.05in</Left>
+                <Top>0.45in</Top>
+                <rd:DefaultName>CUSTOMER_ADDR2</rd:DefaultName>
+                <ZIndex>2</ZIndex>
+                <Width>2.925in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!CUSTOMER_ADDR2.Value</Value>
+              </Textbox>
+              <Textbox Name="CUSTOMER_ADDR3">
+                <Left>0.05in</Left>
+                <Top>0.6in</Top>
+                <rd:DefaultName>CUSTOMER_ADDR3</rd:DefaultName>
+                <ZIndex>1</ZIndex>
+                <Width>2.925in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!CUSTOMER_ADDR3.Value</Value>
+              </Textbox>
+              <Textbox Name="CUSTOMER_ADDR4">
+                <Left>0.05in</Left>
+                <Top>0.75in</Top>
+                <rd:DefaultName>CUSTOMER_ADDR4</rd:DefaultName>
+                <Width>2.925in</Width>
+                <Style>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <FontSize>8pt</FontSize>
+                  <PaddingRight>2pt</PaddingRight>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <Height>0.16in</Height>
+                <Value>=Fields!CUSTOMER_ADDR4.Value</Value>
+              </Textbox>
+            </ReportItems>
+            <Top>0.8in</Top>
+            <Width>3.075in</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>1.025in</Height>
+          </Rectangle>
+        </ReportItems>
+        <DataSetName>CSARChequeDataset_TRN_ARCHEQUE</DataSetName>
+        <Style>
+          <FontSize>8pt</FontSize>
+        </Style>
+        <Grouping Name="list1_Details_Group">
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+          <GroupExpressions>
+            <GroupExpression>=Fields!ARCHEQUENO.Value</GroupExpression>
+          </GroupExpressions>
+        </Grouping>
+      </List>
+    </ReportItems>
+    <Height>2.275in</Height>
+  </Body>
+  <rd:ReportID>76b86720-88da-4e61-bd8a-973c65f47376</rd:ReportID>
+  <LeftMargin>0.5in</LeftMargin>
+  <DataSets>
+    <DataSet Name="CSARChequeDataset_TRN_ARCHEQUE">
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceSelectMethod>TRN_ARCHEQUE</rd:ObjectDataSourceSelectMethod>
+        <rd:DataSetName>CSARChequeDataset</rd:DataSetName>
+        <rd:ObjectDataSourceType>CSAccountDatabaseIntf.CSARChequeDataset, CSAccountDatabaseIntf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>TRN_ARCHEQUE</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="ARCHEQUENO">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ARCHEQUENO</DataField>
+        </Field>
+        <Field Name="ARCHEQUE_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ARCHEQUE_CODE</DataField>
+        </Field>
+        <Field Name="CUSTOMER_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_CODE</DataField>
+        </Field>
+        <Field Name="BANKNO">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>BANKNO</DataField>
+        </Field>
+        <Field Name="CHEQUE_DATE">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>CHEQUE_DATE</DataField>
+        </Field>
+        <Field Name="ACC_YEAR">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ACC_YEAR</DataField>
+        </Field>
+        <Field Name="ACC_PERIOD">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ACC_PERIOD</DataField>
+        </Field>
+        <Field Name="CHEQUE_AMT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CHEQUE_AMT</DataField>
+        </Field>
+        <Field Name="RECONCILED">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>RECONCILED</DataField>
+        </Field>
+        <Field Name="CURR_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CURR_CODE</DataField>
+        </Field>
+        <Field Name="CURR_RATE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CURR_RATE</DataField>
+        </Field>
+        <Field Name="DOMESTIC_TOTAL">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>DOMESTIC_TOTAL</DataField>
+        </Field>
+        <Field Name="TOTAL_CHEQUE">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>TOTAL_CHEQUE</DataField>
+        </Field>
+        <Field Name="CUSTOMER_NAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_NAME</DataField>
+        </Field>
+        <Field Name="CUSTOMER_ADDR1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_ADDR1</DataField>
+        </Field>
+        <Field Name="CUSTOMER_ADDR2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_ADDR2</DataField>
+        </Field>
+        <Field Name="CUSTOMER_ADDR3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_ADDR3</DataField>
+        </Field>
+        <Field Name="CUSTOMER_ADDR4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_ADDR4</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="textbox15">
+        <Top>0.05in</Top>
+        <Width>1.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.2in</Height>
+        <Value>="Page "+Globals!PageNumber.ToString+" of "+Globals!TotalPages.ToString</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.3in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BorderStyle>
+        <Top>Solid</Top>
+      </BorderStyle>
+    </Style>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+</Report>

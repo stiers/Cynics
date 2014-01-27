@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DummyDataSource">
+      <ConnectionProperties>
+        <ConnectString />
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <rd:DataSourceID>669e9193-c8e9-4ecf-a4f3-d63300a9f12d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <BottomMargin>0.5in</BottomMargin>
+  <RightMargin>0.5in</RightMargin>
+  <ReportParameters>
+    <ReportParameter Name="FrCustCode">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>FrCustCode</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToCustCode">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ToCustCode</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.025in</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <Body>
+    <ReportItems>
+      <List Name="list1">
+        <Filters>
+          <Filter>
+            <Operator>Between</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!FrCustCode.Value</FilterValue>
+              <FilterValue>=Parameters!ToCustCode.Value</FilterValue>
+            </FilterValues>
+            <FilterExpression>=Fields!CUSTOMER_CODE.Value</FilterExpression>
+          </Filter>
+        </Filters>
+        <ReportItems>
+          <Line Name="line1">
+            <Left>0.075in</Left>
+            <Top>1.325in</Top>
+            <ZIndex>15</ZIndex>
+            <Width>7.3in</Width>
+            <Style>
+              <BorderStyle>
+                <Default>Solid</Default>
+              </BorderStyle>
+            </Style>
+            <Height>0in</Height>
+          </Line>
+          <Textbox Name="textbox5">
+            <Left>0.9in</Left>
+            <Top>1.025in</Top>
+            <ZIndex>14</ZIndex>
+            <Width>0.725in</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>Fax# : </Value>
+          </Textbox>
+          <Textbox Name="textbox4">
+            <Left>0.9in</Left>
+            <Top>0.8in</Top>
+            <ZIndex>13</ZIndex>
+            <Width>0.725in</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>Phone# : </Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Left>0.9in</Left>
+            <Top>0.575in</Top>
+            <ZIndex>12</ZIndex>
+            <Width>0.725in</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>Reg# : </Value>
+          </Textbox>
+          <Textbox Name="FAX">
+            <Left>1.66875in</Left>
+            <Top>1.025in</Top>
+            <rd:DefaultName>FAX</rd:DefaultName>
+            <ZIndex>11</ZIndex>
+            <Width>2.2in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!FAX.Value</Value>
+          </Textbox>
+          <Textbox Name="PHONE">
+            <Left>1.66875in</Left>
+            <Top>0.8in</Top>
+            <rd:DefaultName>PHONE</rd:DefaultName>
+            <ZIndex>10</ZIndex>
+            <Width>2.2in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!PHONE.Value</Value>
+          </Textbox>
+          <Textbox Name="ADDR4">
+            <Left>4.075in</Left>
+            <Top>0.875in</Top>
+            <rd:DefaultName>ADDR4</rd:DefaultName>
+            <ZIndex>9</ZIndex>
+            <Width>2.65in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!ADDR4.Value</Value>
+          </Textbox>
+          <Textbox Name="ADDR3">
+            <Left>4.075in</Left>
+            <Top>0.675in</Top>
+            <rd:DefaultName>ADDR3</rd:DefaultName>
+            <ZIndex>8</ZIndex>
+            <Width>2.65in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!ADDR3.Value</Value>
+          </Textbox>
+          <Textbox Name="ADDR2">
+            <Left>4.075in</Left>
+            <Top>0.475in</Top>
+            <rd:DefaultName>ADDR2</rd:DefaultName>
+            <ZIndex>7</ZIndex>
+            <Width>2.65in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!ADDR2.Value</Value>
+          </Textbox>
+          <Textbox Name="ADDR1">
+            <Left>4.075in</Left>
+            <Top>0.275in</Top>
+            <rd:DefaultName>ADDR1</rd:DefaultName>
+            <ZIndex>6</ZIndex>
+            <Width>2.65in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!ADDR1.Value</Value>
+          </Textbox>
+          <Textbox Name="REG_CODE">
+            <Left>1.66875in</Left>
+            <Top>0.575in</Top>
+            <rd:DefaultName>REG_CODE</rd:DefaultName>
+            <ZIndex>5</ZIndex>
+            <Width>2.2in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!REG_CODE.Value</Value>
+          </Textbox>
+          <Textbox Name="textbox2">
+            <Left>0.55in</Left>
+            <Top>0.375in</Top>
+            <ZIndex>4</ZIndex>
+            <Width>1.075in</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingBottom>2pt</PaddingBottom>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>Customer Name : </Value>
+          </Textbox>
+          <Textbox Name="textbox1">
+            <Left>0.875in</Left>
+            <Top>0.175in</Top>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <ZIndex>3</ZIndex>
+            <Width>0.75in</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <FontWeight>700</FontWeight>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>Customer# : </Value>
+          </Textbox>
+          <Textbox Name="CUSTOMER_NAME">
+            <Left>1.66875in</Left>
+            <Top>0.375in</Top>
+            <rd:DefaultName>CUSTOMER_NAME</rd:DefaultName>
+            <ZIndex>2</ZIndex>
+            <Width>2.2in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!CUSTOMER_NAME.Value</Value>
+          </Textbox>
+          <Textbox Name="CUSTOMER_CODE">
+            <Left>1.66875in</Left>
+            <Top>0.175in</Top>
+            <rd:DefaultName>CUSTOMER_CODE</rd:DefaultName>
+            <ZIndex>1</ZIndex>
+            <Width>2.2in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Height>0.18in</Height>
+            <Value>=Fields!CUSTOMER_CODE.Value</Value>
+          </Textbox>
+          <Rectangle Name="rectangle1">
+            <Left>3.96875in</Left>
+            <Top>0.175in</Top>
+            <Width>2.83125in</Width>
+            <Height>1in</Height>
+          </Rectangle>
+        </ReportItems>
+        <DataSetName>CSMasterDataset_MST_CUSTOMER</DataSetName>
+      </List>
+    </ReportItems>
+    <Height>1.4in</Height>
+  </Body>
+  <PageHeader>
+    <ReportItems>
+      <Textbox Name="textbox14">
+        <Left>5.875in</Left>
+        <rd:DefaultName>textbox14</rd:DefaultName>
+        <ZIndex>1</ZIndex>
+        <Width>1.60001in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>=Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Width>1.9875in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>14pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.375in</Height>
+        <Value>Customer's  Listing</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.45in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BorderStyle>
+        <Bottom>Solid</Bottom>
+      </BorderStyle>
+    </Style>
+  </PageHeader>
+  <rd:ReportID>b827ec28-8349-49d7-af3d-edaad12178bb</rd:ReportID>
+  <LeftMargin>0.5in</LeftMargin>
+  <DataSets>
+    <DataSet Name="CSMasterDataset_MST_CUSTOMER">
+      <rd:DataSetInfo>
+        <rd:ObjectDataSourceSelectMethod>MST_CUSTOMER</rd:ObjectDataSourceSelectMethod>
+        <rd:DataSetName>CSMasterDataset</rd:DataSetName>
+        <rd:ObjectDataSourceType>CSAccountDatabaseIntf.CSMasterDataset, CSAccountDatabaseIntf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>MST_CUSTOMER</rd:TableName>
+      </rd:DataSetInfo>
+      <Query>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText />
+        <DataSourceName>DummyDataSource</DataSourceName>
+      </Query>
+      <Fields>
+        <Field Name="CUSTOMER_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_CODE</DataField>
+        </Field>
+        <Field Name="CUSTOMER_NAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTOMER_NAME</DataField>
+        </Field>
+        <Field Name="REG_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>REG_CODE</DataField>
+        </Field>
+        <Field Name="ADDR1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR1</DataField>
+        </Field>
+        <Field Name="ADDR2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR2</DataField>
+        </Field>
+        <Field Name="ADDR3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR3</DataField>
+        </Field>
+        <Field Name="ADDR4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ADDR4</DataField>
+        </Field>
+        <Field Name="PHONE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PHONE</DataField>
+        </Field>
+        <Field Name="FAX">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>FAX</DataField>
+        </Field>
+        <Field Name="WEBPAGE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>WEBPAGE</DataField>
+        </Field>
+        <Field Name="EMAIL">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>EMAIL</DataField>
+        </Field>
+        <Field Name="CONTACT1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CONTACT1</DataField>
+        </Field>
+        <Field Name="C1PHONE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C1PHONE</DataField>
+        </Field>
+        <Field Name="C1FAX">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C1FAX</DataField>
+        </Field>
+        <Field Name="CONTACT2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CONTACT2</DataField>
+        </Field>
+        <Field Name="C2PHONE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C2PHONE</DataField>
+        </Field>
+        <Field Name="C2FAX">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>C2FAX</DataField>
+        </Field>
+        <Field Name="DISCDAY">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DISCDAY</DataField>
+        </Field>
+        <Field Name="DISCPTG">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>DISCPTG</DataField>
+        </Field>
+        <Field Name="DUEDAY">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>DUEDAY</DataField>
+        </Field>
+        <Field Name="CURR_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CURR_CODE</DataField>
+        </Field>
+        <Field Name="IS_COD">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_COD</DataField>
+        </Field>
+        <Field Name="CREDIT_LIMIT">
+          <rd:TypeName>System.Decimal</rd:TypeName>
+          <DataField>CREDIT_LIMIT</DataField>
+        </Field>
+        <Field Name="TAX_CODE1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TAX_CODE1</DataField>
+        </Field>
+        <Field Name="TAX_CODE2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TAX_CODE2</DataField>
+        </Field>
+        <Field Name="SALES_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SALES_CODE</DataField>
+        </Field>
+        <Field Name="CUSTTYPE_CODE">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CUSTTYPE_CODE</DataField>
+        </Field>
+        <Field Name="TAXEXAMPNO1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TAXEXAMPNO1</DataField>
+        </Field>
+        <Field Name="TAXEXAMPNO2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>TAXEXAMPNO2</DataField>
+        </Field>
+        <Field Name="SHIPNAME">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIPNAME</DataField>
+        </Field>
+        <Field Name="SHIPADDR1">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIPADDR1</DataField>
+        </Field>
+        <Field Name="SHIPADDR2">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIPADDR2</DataField>
+        </Field>
+        <Field Name="SHIPADDR3">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIPADDR3</DataField>
+        </Field>
+        <Field Name="SHIPADDR4">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>SHIPADDR4</DataField>
+        </Field>
+        <Field Name="IS_SUSPEND">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_SUSPEND</DataField>
+        </Field>
+        <Field Name="IS_PRINTSTM">
+          <rd:TypeName>System.Boolean</rd:TypeName>
+          <DataField>IS_PRINTSTM</DataField>
+        </Field>
+        <Field Name="NOTES">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>NOTES</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>7.5in</Width>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <PageFooter>
+    <ReportItems>
+      <Textbox Name="textbox15">
+        <Top>0.05in</Top>
+        <Width>1.375in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingBottom>2pt</PaddingBottom>
+          <FontWeight>700</FontWeight>
+          <FontSize>8pt</FontSize>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.2in</Height>
+        <Value>="Page "+Globals!PageNumber.ToString+" of "+Globals!TotalPages.ToString</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.35in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <Style>
+      <BorderStyle>
+        <Top>Solid</Top>
+      </BorderStyle>
+    </Style>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+</Report>

@@ -1,0 +1,1013 @@
+-- SYS_RPTTYPE  
+
+USE [{CSAccountDB1}]
+
+INSERT INTO [dbo].[SYS_RPTTYPE] ([RPTTYPE_CODE], [RPTTYPE_NAME], [REVERSE_VALUE])
+VALUES 
+  ('DETAIL', 'Detail', 0)
+GO
+
+INSERT INTO [dbo].[SYS_RPTTYPE] ([RPTTYPE_CODE], [RPTTYPE_NAME], [REVERSE_VALUE])
+VALUES 
+  ('DETAILR', 'Detail With Reverse Value', 1)
+GO
+
+INSERT INTO [dbo].[SYS_RPTTYPE] ([RPTTYPE_CODE], [RPTTYPE_NAME], [REVERSE_VALUE])
+VALUES 
+  ('HEADING', 'Heading', 0)
+GO
+
+INSERT INTO [dbo].[SYS_RPTTYPE] ([RPTTYPE_CODE], [RPTTYPE_NAME], [REVERSE_VALUE])
+VALUES 
+  ('TOTAL', 'Total', 0)
+GO
+
+INSERT INTO [dbo].[SYS_RPTTYPE] ([RPTTYPE_CODE], [RPTTYPE_NAME], [REVERSE_VALUE])
+VALUES 
+  ('TOTALR', 'Total With Reverse Value', 1)
+GO
+
+-- 5 record(s) inserted to [dbo].[SYS_RPTTYPE]
+
+
+-- MST_CUSTTYPE  
+
+INSERT INTO [dbo].[MST_CUSTTYPE] ([CUSTTYPE_CODE], [CUSTTYPE_NAME])
+VALUES 
+  ('NORMAL', 'Normal Customer')
+GO
+
+INSERT INTO [dbo].[MST_CUSTTYPE] ([CUSTTYPE_CODE], [CUSTTYPE_NAME])
+VALUES 
+  ('VIP', 'VIP Customer')
+GO
+
+-- 2 record(s) inserted to [dbo].[MST_CUSTTYPE]
+
+
+
+
+--
+-- Data for table MST_FORMS  (LIMIT 0,500)
+--
+
+SET IDENTITY_INSERT [dbo].[MST_FORMS] ON
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (5, 'CSSystem', 'CSSystem.FmSecurity', 'Security Settings')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (6, 'CSSystem', 'CSSystem.FmTest', 'Testing')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (7, 'CSGLedger', 'CSGLedger.FmAccount', 'Account Settings')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (8, 'CSGLedger', 'CSGLedger.FmGL', 'General Ledger')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (9, 'CSGLedger', 'CSGLedger.FmCurrency', 'Currency Settings')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (10, 'CSGLedger', 'CSGLedger.FmCompany', 'Company Setup')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (12, 'CSAccPayable', 'CSAccPayable.FmVendor', 'Vendor Settings')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (13, 'CSAccPayable', 'CSAccPayable.FmAPInv', 'Vendor Invoice')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (14, 'CSGLedger', 'CSGLedger.FmBank', 'Bank Settings')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (15, 'CSAccPayable', 'CSAccPayable.FmCheque', 'Cheque Payment')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (16, 'CSAccReceivable', 'CSAccReceivable.FmCustType', 'Customer Type')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (17, 'CSAccReceivable', 'CSAccReceivable.FmSalesman', 'Salesman')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (18, 'CSAccReceivable', 'CSAccReceivable.FmTax', 'Tax Setup')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (19, 'CSAccReceivable', 'CSAccReceivable.FmCustomer', 'Customer Setup')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (20, 'CSAccReceivable', 'CSAccReceivable.FmARInv', 'Customer Invoice')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (21, 'CSAccReceivable', 'CSAccReceivable.FmARCheque', 'Customer Payment')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (25, 'CSReports', 'OpenPayable.rdlc', 'Open Payable Report')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (26, 'CSReports', 'CustomersAging.rdlc', 'Customers'' Aging Report')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (27, 'CSReports', 'CustomerStatement.rdlc', 'Customer Statement Report')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (28, 'CSReports', 'TrialBalance.rdlc', 'Trial Balance Report')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (31, 'CSReports', 'BLPL.rdlc', 'Financial Report')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (32, 'MyModule', 'MyModule.Form1', 'Form1')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (33, 'CSAccInventory', 'CSAccInventory.FmItemType', 'Item Type')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (34, 'CSAccInventory', 'CSAccInventory.FmWarehouse', 'Warehouse')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (35, 'CSAccInventory', 'CSAccInventory.FmItemMaster', 'Item Master')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (36, 'CSAccInventory', 'CSAccInventory.FmReceiving', 'Item Receive')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (37, 'CSAccInventory', 'CSAccInventory.FmDO', 'Delivery Order')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (38, 'CSAccInventory', 'CSAccInventory.FmAJ', 'Adjustment')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (39, 'CSAccInventory', 'CSAccInventory.FmInvTotal', 'Inventory Total')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (40, 'CSAccInventory', 'CSAccInventory.FmInvHistory', 'Inventory History')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (41, 'CSAccInventory', 'CSAccInventory.FmItmGrp', 'Item Group')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (42, 'CSAccInventory', 'CSAccInventory.FmItmColor', 'Item Color')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (43, 'CSAccInventory', 'CSAccInventory.FmItmSize', 'Item Size')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (44, 'CSPOS', 'CSPOS.FmDTO', 'Distribution Order')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (45, 'CSPOS', 'CSPOS.FmPOSUser', 'POS User Setting')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (47, 'CSPOS', 'CSPOS.FmPOSSetting', 'POS Settings')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (48, 'CSPOS', 'CSPOS.FmDailySales', 'POS Daily Sales')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (49, 'CSAccInventory', 'CSAccInventory.FmInvClass1', 'Item Class 1')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (50, 'CSAccInventory', 'CSAccInventory.FmInvClass2', 'Item Class 2')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (51, 'CSGLedger', 'CSGLedger.FmBKBook', 'Bank Book')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (52, 'CSReports', 'SimpleFinance.rdlc', 'Simple Finance Rpt')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (53, 'CSPOS', 'CSPOS.FmDailySalesByItem', 'POS Item Sales')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (54, 'CSPOS', 'CSPOS.FmDailySalesByTender', 'POS Tender Sales')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (55, 'CSPOS', 'CSPOS.FmPOSTSL', 'POS Sales Posting')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (56, 'CSReports', 'ItemStockTakeList.rdlc', 'Stock Take List')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (57, 'CSSystem', 'CSSystem.FmKeyCode', 'Document Code')
+GO
+
+INSERT INTO [dbo].[MST_FORMS] ([FORMNO], [ASSEMBLY_NAME], [FORM_CLASS], [FORM_NAME])
+VALUES 
+  (58, 'CSAccInventory', 'CSAccInventory.FmInvCashBill', 'Cash Bill')
+GO
+
+--
+-- 52 record(s) inserted to [dbo].[MST_FORMS]
+--
+
+
+
+SET IDENTITY_INSERT [dbo].[MST_FORMS] OFF
+GO
+
+--
+-- Data for table MST_GRPS  (LIMIT 0,500)
+--
+
+SET IDENTITY_INSERT [dbo].[MST_GRPS] ON
+GO
+
+INSERT INTO [dbo].[MST_GRPS] ([GRPNO], [GRPNAME])
+VALUES 
+  (1, 'Master Settings')
+GO
+
+INSERT INTO [dbo].[MST_GRPS] ([GRPNO], [GRPNAME])
+VALUES 
+  (2, 'General Ledger')
+GO
+
+INSERT INTO [dbo].[MST_GRPS] ([GRPNO], [GRPNAME])
+VALUES 
+  (5, 'Financial Reports')
+GO
+
+
+--
+-- 3 record(s) inserted to [dbo].[MST_GRPS]
+--
+
+
+
+SET IDENTITY_INSERT [dbo].[MST_GRPS] OFF
+GO
+
+
+--
+-- Data for table MST_GRPFORM  (LIMIT 0,500)
+--
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (1, 5)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (1, 7)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 8)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 9)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 10)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 11)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 14)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 22)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 23)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 28)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 29)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 30)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (2, 51)
+GO
+
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (5, 31)
+GO
+
+INSERT INTO [dbo].[MST_GRPFORM] ([GRPNO], [FORMNO])
+VALUES 
+  (5, 52)
+GO
+
+--
+-- xx record(s) inserted to [dbo].[MST_GRPFORM]
+--
+
+
+--
+-- Data for table MST_KEY  (LIMIT 0,500)
+--
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ACCRPTDDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ACCRPTDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ACCRPTNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ACCTOTALNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('AJDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('AJNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('APINVDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('APINVNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ARCHQDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ARCHQNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ARINVDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ARINVNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('BANKNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('BKTRANDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('BKTRANNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('CBDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('CBNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('CHEQUEDNO', 09)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('CHEQUENO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('DODNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('DONO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('DTODNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('DTONO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('DTOWHNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('GNLJNLDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('GNLJNLNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ITEMNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('ITEMTYPENO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('POSSETNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('POSTSLDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('POSTSLNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('POSUSERNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('PRMITMNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('PRMNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('PRMRP', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('PRMRULENO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('RCDNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('RCNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('RECONNO', 0)
+GO
+
+INSERT INTO [dbo].[MST_KEY] ([KEY_CODE], [KEYNO])
+VALUES 
+  ('WHNO', 0)
+GO
+
+--
+-- 40 record(s) inserted to [dbo].[MST_KEY]
+--
+
+--
+-- Data for table MST_ROLES  (LIMIT 0,500)
+--
+
+INSERT INTO [dbo].[MST_ROLES] ([ROLENO], [ROLE_NAME])
+VALUES 
+  (1, 'ADMIN')
+GO
+
+INSERT INTO [dbo].[MST_ROLES] ([ROLENO], [ROLE_NAME])
+VALUES 
+  (2, 'CLERK')
+GO
+
+--
+-- 2 record(s) inserted to [dbo].[MST_ROLES]
+--
+
+--
+-- Data for table MST_ROLEFORM  (LIMIT 0,500)
+--
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 5, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 7, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 8, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 9, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 10, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 11, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 12, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 13, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 14, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 15, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 16, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 17, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 18, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 19, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 20, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 21, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 22, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 23, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 25, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 26, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 27, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 28, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 29, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 30, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 31, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 33, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 34, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 35, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 36, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 37, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 38, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 39, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 40, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 41, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 42, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 43, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 44, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 45, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 47, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 48, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 49, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 50, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 51, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 52, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 53, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 54, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 55, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 56, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 57, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (1, 58, 1, 1, 1, 1)
+GO
+
+INSERT INTO [dbo].[MST_ROLEFORM] ([ROLENO], [FORMNO], [ALLOW_ADD], [ALLOW_EDT], [ALLOW_DEL], [ALLOW_PRN])
+VALUES 
+  (2, 7, 1, 1, 1, 1)
+GO
+
+--
+-- 51 record(s) inserted to [dbo].[MST_ROLEFORM]
+--
+
+
+
+-- MST_USER 
+
+SET IDENTITY_INSERT [dbo].[MST_USER] ON
+GO
+
+INSERT INTO [dbo].[MST_USER] ([USERNO], [ROLENO], [USERID], [PASSWD])
+VALUES 
+  (2, 1, 'ADMIN', 0x0055425A9F5F32B1)
+GO
+
+INSERT INTO [dbo].[MST_USER] ([USERNO], [ROLENO], [USERID], [PASSWD])
+VALUES 
+  (3, 2, 'CLERK', 0x3F7AD718CFE9B2B9)
+GO
+
+--
+-- 2 record(s) inserted to [dbo].[MST_USER]
+--
+
+
+
+SET IDENTITY_INSERT [dbo].[MST_USER] OFF
+GO
+
+-- SYS_ACCTYPE 
+INSERT INTO [dbo].[SYS_ACCTYPE] ([ACC_TYPE], [TYPE_NAME])
+VALUES 
+  (1, 'Fixed Asset')
+GO
+
+INSERT INTO [dbo].[SYS_ACCTYPE] ([ACC_TYPE], [TYPE_NAME])
+VALUES 
+  (2, 'Current Asset')
+GO
+
+INSERT INTO [dbo].[SYS_ACCTYPE] ([ACC_TYPE], [TYPE_NAME])
+VALUES 
+  (3, 'Long Term Liability')
+GO
+
+INSERT INTO [dbo].[SYS_ACCTYPE] ([ACC_TYPE], [TYPE_NAME])
+VALUES 
+  (4, 'Current Liability')
+GO
+
+INSERT INTO [dbo].[SYS_ACCTYPE] ([ACC_TYPE], [TYPE_NAME])
+VALUES 
+  (5, 'Equity')
+GO
+
+INSERT INTO [dbo].[SYS_ACCTYPE] ([ACC_TYPE], [TYPE_NAME])
+VALUES 
+  (6, 'Revenue')
+GO
+
+INSERT INTO [dbo].[SYS_ACCTYPE] ([ACC_TYPE], [TYPE_NAME])
+VALUES 
+  (7, 'Expenses')
+GO
+
+-- 7 record(s) inserted to [dbo].[SYS_ACCTYPE]
+
+
+--
+-- Data for table MST_TEMPLATE  (LIMIT 0,500)
+--
+INSERT INTO [dbo].[MST_TEMPLATE] ([TEMPLATE_CODE], [TEMPLATE_NAME])
+VALUES 
+  ('BLBUDGET', 'Balance Sheet Compare Budget')
+GO
+
+INSERT INTO [dbo].[MST_TEMPLATE] ([TEMPLATE_CODE], [TEMPLATE_NAME])
+VALUES 
+  ('BLSIMPLE', 'Balance Sheet Simple')
+GO
+
+INSERT INTO [dbo].[MST_TEMPLATE] ([TEMPLATE_CODE], [TEMPLATE_NAME])
+VALUES 
+  ('BLYEAR', 'Balance Sheet Compare Year')
+GO
+
+INSERT INTO [dbo].[MST_TEMPLATE] ([TEMPLATE_CODE], [TEMPLATE_NAME])
+VALUES 
+  ('PLBUDGET', 'P&L Compare Budget')
+GO
+
+INSERT INTO [dbo].[MST_TEMPLATE] ([TEMPLATE_CODE], [TEMPLATE_NAME])
+VALUES 
+  ('PLMONTH', 'P&L Compare Month')
+GO
+
+INSERT INTO [dbo].[MST_TEMPLATE] ([TEMPLATE_CODE], [TEMPLATE_NAME])
+VALUES 
+  ('PLSIMPLE', 'P&L Simple')
+GO
+
+INSERT INTO [dbo].[MST_TEMPLATE] ([TEMPLATE_CODE], [TEMPLATE_NAME])
+VALUES 
+  ('PLYEAR', 'P&L Compare Year')
+GO
+
+--
+-- 7 record(s) inserted to [dbo].[MST_TEMPLATE]
+--
